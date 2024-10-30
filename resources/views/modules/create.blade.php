@@ -72,7 +72,7 @@
     <div class="container">
         <h1 class="text-3xl font-bold mb-6">Add a New Module</h1>
 
-        <form action="{{ route('modules.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.modules.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="form-group">

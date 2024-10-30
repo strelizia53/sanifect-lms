@@ -1,15 +1,14 @@
 <?php
 
-// app/Http/Controllers/ModuleController.php
 namespace App\Http\Controllers;
 
 use App\Models\Module;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage; // Correct import
 
 class ModuleController extends Controller
 {
-    
     public function index()
     {
         $categories = Category::all();
@@ -47,17 +46,58 @@ class ModuleController extends Controller
     public function show($id)
     {
         $module = Module::findOrFail($id);
-    
-        // Generate the folder path dynamically based on the module ID
         $folderPath = "data/module_{$module->id}/index.html";
-    
-        // Check if the module folder exists, if not, return a 404 or custom message
+
         if (!file_exists(public_path($folderPath))) {
             abort(404, 'Module content not found');
         }
-    
+
         return view('modules.show', compact('module', 'folderPath'));
     }
 
-    
+    public function edit($id)
+    {
+        $module = Module::findOrFail($id);
+        $categories = Category::all();
+
+        return view('modules.edit', compact('module', 'categories'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'cover_image' => 'nullable|image',
+            'category_id' => 'required|exists:categories,id',
+        ]);
+
+        $module = Module::findOrFail($id);
+
+        if ($request->hasFile('cover_image')) {
+            $imagePath = $request->file('cover_image')->store('modules', 'public');
+            $module->cover_image = $imagePath;
+        }
+
+        $module->update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'category_id' => $request->category_id,
+        ]);
+
+        return redirect()->route('modules.index')->with('success', 'Module updated successfully.');
+    }
+
+    public function destroy($id)
+    {
+        $module = Module::findOrFail($id);
+
+        if ($module->cover_image) {
+            Storage::disk('public')->delete($module->cover_image); // Corrected usage
+        }
+
+        $module->delete();
+
+        return redirect()->route('modules.index')->with('success', 'Module deleted successfully.');
+    }
 }

@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -22,6 +21,7 @@ class User extends Authenticatable
         'email',
         'password',
         'role',
+        'profile_picture',  // Add profile_picture to fillable attributes
     ];
 
     /**
@@ -43,4 +43,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    /**
+     * Get the URL of the profile picture or a placeholder if not set.
+     *
+     * @return string
+     */
+    public function getProfilePictureUrlAttribute()
+    {
+        return $this->profile_picture 
+            ? asset('storage/' . $this->profile_picture) 
+            : 'https://via.placeholder.com/150';
+    }
 }

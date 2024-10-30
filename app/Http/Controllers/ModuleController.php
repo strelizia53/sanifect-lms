@@ -100,4 +100,21 @@ class ModuleController extends Controller
 
         return redirect()->route('modules.index')->with('success', 'Module deleted successfully.');
     }
+    public function search(Request $request)
+    {
+        $searchQuery = $request->input('query');
+    
+        // If the query is empty, redirect to the home page
+        if (!$searchQuery) {
+            return redirect()->route('home');
+        }
+    
+        // Fetch modules that match the query
+        $modules = Module::where('title', 'LIKE', '%' . $searchQuery . '%')->get();
+        $categories = Category::all();
+    
+        return view('home', compact('modules', 'categories', 'searchQuery'));
+    }
+    
+
 }

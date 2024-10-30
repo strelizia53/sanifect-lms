@@ -20,6 +20,7 @@ Route::get('/home', [ModuleController::class, 'index'])->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+    Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::get('/settings', [SettingsController::class, 'index'])->name('settings');
 });
 
@@ -38,4 +39,5 @@ Route::middleware(['auth', 'admin'])->group(function () {
 Route::get('/modules', [ModuleController::class, 'index'])->name('modules.index');
 Route::post('/modules', [ModuleController::class, 'store'])->name('modules.store');
 Route::get('/modules/{id}', [ModuleController::class, 'show'])->name('modules.show');
+Route::get('/modules/search', [ModuleController::class, 'search'])->name('modules.search');
 

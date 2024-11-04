@@ -1,11 +1,10 @@
 <!-- resources/views/components/navbar.blade.php -->
 <nav class="bg-yellow-500 shadow-lg">
     <div class="max-w-full px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-        <!-- Sanifect LMS Header -->
+        <!-- Logo Image -->
         <div>
-            <a href="{{ route('home') }}" class="text-2xl font-bold">
-                <span class="text-gray-900">SANIFECT</span>
-                <span class="text-white">LMS</span>
+            <a href="{{ route('home') }}">
+                <img src="{{ asset('logo.png') }}" alt="Logo" class="h-10">
             </a>
         </div>
 
@@ -24,7 +23,7 @@
                     <div id="dropdownMenu"
                          class="absolute right-0 mt-2 bg-white rounded-lg shadow-lg w-48 hidden z-10">
                         <a href="{{ route('profile') }}" class="block px-4 py-2 text-gray-900 hover:bg-yellow-100">Profile</a>
-                        <a href="{{ route('settings') }}" class="block px-4 py-2 text-gray-900 hover:bg-yellow-100">Settings</a>
+                        {{-- <a href="{{ route('settings') }}" class="block px-4 py-2 text-gray-900 hover:bg-yellow-100">Settings</a> --}}
                         <form method="POST" action="{{ route('logout') }}" class="block">
                             @csrf
                             <button type="submit" class="w-full text-left px-4 py-2 text-gray-900 hover:bg-yellow-100">

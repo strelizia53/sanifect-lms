@@ -68,6 +68,7 @@
     <!-- Navbar Component -->
     <x-navbar />
 
+    <a href="{{ route('home') }}" class="back-button">Back to Home</a>
     <div class="main">
         <div class="container">
             <!-- Dynamically load the correct module content via iframe -->
@@ -75,7 +76,6 @@
         </div>
     </div>
 
-    <a href="{{ route('home') }}" class="back-button">Back to Home</a>
 
     <script>
         // Load theme from localStorage

@@ -46,3 +46,30 @@ Route::get('forgot-password', [ForgotPasswordController::class, 'showLinkRequest
 Route::post('forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
 Route::get('reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
+
+// those routes lol
+
+Route::get('/quiz', function () {
+    return view('showcase.index');
+})->name('quiz.index');
+Route::get('/quiz/mcq1', function () {
+    return view('showcase.mcqone');
+})->name('quiz.mcq1');
+Route::get('/quiz/mcq2', function () {
+    return view('showcase.mcqtwo');
+})->name('quiz.mcq2');
+Route::get('/quiz/mcq3', function () {
+    return view('showcase.mcqthree');
+})->name('quiz.mcq3');
+Route::get('/quiz/mcq4', function () {
+    return view('showcase.mcqfour');
+})->name('quiz.mcq4');
+Route::get('/quiz/ddone', function () {
+    return view('showcase.ddone');
+})->name('quiz.ddone');
+Route::get('/quiz/ddtwo', function () {
+    return view('showcase.ddtwo');
+})->name('quiz.ddtwo');
+Route::get('/quiz/thank-you', function () {
+    return view('showcase.thankyou');
+})->name('showcase.thankyou');

@@ -54,15 +54,14 @@
                     />
                     <div class="p-6">
                         <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-4">
-                            {{ $module->title }}
+                            sample module
                         </h2>
                         <p class="text-lg text-gray-600 dark:text-gray-300 mb-4">
-                            <strong>Category:</strong> {{ $module->category->name }}
-                        </p>
+                            <strong>Category:</strong> Medicine </p>
                         <p class="text-gray-600 dark:text-gray-300 mb-6">
-                            {{ $module->description }}
+                            Sanifect infection control module.
                         </p>
-                        <a href="{{ route('modules.show', $module->id) }}" 
+                        <a href="{{ route('quiz.index') }}" 
                            class="text-yellow-500 hover:underline font-medium text-lg">
                             View Module
                         </a>

@@ -48,7 +48,7 @@
         <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
             @forelse($modules as $module)
                 <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
-                    <img src="{{ asset('storage/' . $module->cover_image) }}" 
+                    <img src="{{asset('moduleSlides/1.jpg')}}" 
                          alt="{{ $module->title }}" 
                          class="w-full h-64 object-cover"
                     />

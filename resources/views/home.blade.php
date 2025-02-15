@@ -45,33 +45,98 @@
         </section>
 
         <!-- Modules Section -->
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            @forelse($modules as $module)
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
-                    <img src="{{asset('moduleSlides/1.jpg')}}" 
-                         alt="{{ $module->title }}" 
-                         class="w-full h-64 object-cover"
-                    />
-                    <div class="p-6">
-                        <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-4">
-                            sample module
-                        </h2>
-                        <p class="text-lg text-gray-600 dark:text-gray-300 mb-4">
-                            <strong>Category:</strong> Medicine </p>
-                        <p class="text-gray-600 dark:text-gray-300 mb-6">
-                            Sanifect infection control module.
-                        </p>
-                        <a href="{{ route('quiz.index') }}" 
-                           class="text-yellow-500 hover:underline font-medium text-lg">
-                            View Module
-                        </a>
-                    </div>
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <!-- Sample Module -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                <img src="{{ asset('moduleSlides/1.jpg') }}" 
+                     alt="Sample Module" 
+                     class="w-full h-64 object-cover"
+                />
+                <div class="p-6">
+                    <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-4">
+                        Sample Module
+                    </h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-4">
+                        <strong>Category:</strong> Medicine
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        Sanifect infection control module.
+                    </p>
+                    <a href="{{ route('quiz.index') }}" 
+                       class="text-yellow-500 hover:underline font-medium text-lg">
+                        View Module
+                    </a>
                 </div>
-            @empty
-                <p class="text-center w-full text-xl text-gray-700 dark:text-gray-300">
-                    No modules available.
-                </p>
-            @endforelse
+            </div>
+
+            <!-- Module 1 -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                <img src="{{ asset('moduleSlides/2.jpg') }}" 
+                     alt="Module 1" 
+                     class="w-full h-64 object-cover"
+                />
+                <div class="p-6">
+                    <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-4">
+                        Module 1
+                    </h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-4">
+                        <strong>Category:</strong> Infection Control
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        Learn about infection prevention and control measures.
+                    </p>
+                    <a href="{{ route('module1.index') }}" 
+                       class="text-yellow-500 hover:underline font-medium text-lg">
+                        View Module
+                    </a>
+                </div>
+            </div>
+
+            <!-- Module 2 -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                <img src="{{ asset('moduleSlides/3.jpg') }}" 
+                     alt="Module 2" 
+                     class="w-full h-64 object-cover"
+                />
+                <div class="p-6">
+                    <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-4">
+                        Module 2
+                    </h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-4">
+                        <strong>Category:</strong> Healthcare Safety
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        Understanding healthcare safety measures and protocols.
+                    </p>
+                    <a href="{{ route('module2.index') }}" 
+                       class="text-yellow-500 hover:underline font-medium text-lg">
+                        View Module
+                    </a>
+                </div>
+            </div>
+
+            <!-- Module 3 -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                <img src="{{ asset('moduleSlides/4.jpg') }}" 
+                     alt="Module 3" 
+                     class="w-full h-64 object-cover"
+                />
+                <div class="p-6">
+                    <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-4">
+                        Module 3
+                    </h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-4">
+                        <strong>Category:</strong> Patient Care
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        Best practices in patient care and hygiene.
+                    </p>
+                    <a href="{{ route('module3.index') }}" 
+                       class="text-yellow-500 hover:underline font-medium text-lg">
+                        View Module
+                    </a>
+                </div>
+            </div>
         </section>    
     </div>
 

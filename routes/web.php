@@ -73,3 +73,85 @@ Route::get('/quiz/ddtwo', function () {
 Route::get('/quiz/thank-you', function () {
     return view('showcase.thankyou');
 })->name('showcase.thankyou');
+
+/* ======= Module 1 Routes ======= */
+
+// Route::get('/module1', function () {
+//     return view('module1.index');
+// })->name('module1.index');
+
+Route::get('/module1/index', function () {
+    return view('module1.index');
+})->name('module1.index');
+
+Route::get('/module1/mcq1', function () {
+    return view('module1.one');
+})->name('module1.one');
+
+Route::get('/module1/mcq2', function () {
+    return view('module1.two');
+})->name('module1.two');
+
+Route::get('/module1/mcq3', function () {
+    return view('module1.three');
+})->name('module1.three');
+
+Route::get('/module1/mcq4', function () {
+    return view('module1.four');
+})->name('module1.four');
+
+Route::get('/module1/thank-you', function () {
+    return view('module1.thankyou');
+})->name('module1.thankyou');
+
+/* ======= Module 2 Routes (Newly Added) ======= */
+
+Route::get('/module2/index', function () {
+    return view('module2.index');
+})->name('module2.index');
+
+Route::get('/module2/mcq1', function () {
+    return view('module2.one');
+})->name('module2.one');
+
+Route::get('/module2/mcq2', function () {
+    return view('module2.two');
+})->name('module2.two');
+
+Route::get('/module2/mcq3', function () {
+    return view('module2.three');
+})->name('module2.three');
+
+Route::get('/module2/mcq4', function () {
+    return view('module2.four');
+})->name('module2.four');
+
+Route::get('/module2/thank-you', function () {
+    return view('module2.thankyou');
+})->name('module2.thankyou');
+
+/* ======= Module 3 Routes (Newly Added) ======= */
+
+Route::get('/module3/index', function () {
+    return view('module3.index');
+})->name('module3.index');
+
+Route::get('/module3/mcq1', function () {
+    return view('module3.one');
+})->name('module3.one');
+
+Route::get('/module3/mcq2', function () {
+    return view('module3.two');
+})->name('module3.two');
+
+Route::get('/module3/mcq3', function () {
+    return view('module3.three');
+})->name('module3.three');
+
+Route::get('/module3/mcq4', function () {
+    return view('module3.four');
+})->name('module3.four');
+
+Route::get('/module3/thank-you', function () {
+    return view('module3.thankyou');
+})->name('module3.thankyou');

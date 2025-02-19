@@ -19,6 +19,13 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/home', [ModuleController::class, 'index'])->name('home');
 
+//2FA routes
+
+Route::get('/verify-2fa', [AuthController::class, 'show2FAForm'])->name('verify.2fa');
+Route::post('/verify-2fa', [AuthController::class, 'verify2FA']);
+Route::post('/resend-2fa', [AuthController::class, 'resend2FA'])->name('resend.2fa');
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
     Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -46,6 +53,8 @@ Route::get('forgot-password', [ForgotPasswordController::class, 'showLinkRequest
 Route::post('forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
 Route::get('reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
+
+
 
 // those routes lol
 

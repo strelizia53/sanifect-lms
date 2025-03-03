@@ -164,3 +164,49 @@ Route::get('/module3/mcq4', function () {
 Route::get('/module3/thank-you', function () {
     return view('module3.thankyou');
 })->name('module3.thankyou');
+
+//core 1 
+
+Route::get('/coreone/slideshow', function () {
+    return view('coreone.slideshow');
+})->name('coreone.slideshow');
+//mcq
+Route::get('/coreone/mcq/one', function () {
+    return view('coreone.mcqs.one');
+})->name('coreone.one');
+
+Route::get('/coreone/mcq/two', function () {
+    return view('coreone.mcqs.two');
+})->name('coreone.two');
+
+Route::get('/coreone/mcq/three', function () {
+    return view('coreone.mcqs.three');
+})->name('coreone.three');
+
+Route::get('/coreone/mcq/four', function () {
+    return view('coreone.mcqs.four');
+})->name('coreone.four');
+
+Route::get('/coreone/mcq/five', function () {
+    return view('coreone.mcqs.five');
+})->name('coreone.five');
+
+Route::get('/coreone/mcq/six', function () {
+    return view('coreone.mcqs.six');
+})->name('coreone.six');
+
+Route::get('/coreone/mcq/seven', function () {
+    return view('coreone.mcqs.seven');
+})->name('coreone.seven');
+
+Route::get('/coreone/mcq/eight', function () {
+    return view('coreone.mcqs.eight');
+})->name('coreone.eight');
+
+Route::get('/coreone/mcq/nine', function () {
+    return view('coreone.mcqs.nine');
+})->name('coreone.nine');
+
+Route::get('/coreone/mcq/ten', function () {
+    return view('coreone.mcqs.ten');
+})->name('coreone.ten');

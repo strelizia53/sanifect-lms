@@ -47,7 +47,7 @@
         <!-- Modules Section -->
         <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             <!-- Sample Module -->
-            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+            {{-- <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
                 <img src="{{ asset('moduleSlides/1.jpg') }}" 
                      alt="Sample Module" 
                      class="w-full h-64 object-cover"
@@ -67,7 +67,7 @@
                         View Module
                     </a>
                 </div>
-            </div>
+            </div> --}}
 
             <!-- Module 1 -->
             <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
@@ -79,9 +79,6 @@
                     <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-4">
                         Module 1
                     </h2>
-                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-4">
-                        <strong>Category:</strong> Infection Control
-                    </p>
                     <p class="text-gray-600 dark:text-gray-300 mb-6">
                         Learn about infection prevention and control measures.
                     </p>
@@ -102,9 +99,6 @@
                     <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-4">
                         Module 2
                     </h2>
-                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-4">
-                        <strong>Category:</strong> Healthcare Safety
-                    </p>
                     <p class="text-gray-600 dark:text-gray-300 mb-6">
                         Understanding healthcare safety measures and protocols.
                     </p>
@@ -125,9 +119,6 @@
                     <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-4">
                         Module 3
                     </h2>
-                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-4">
-                        <strong>Category:</strong> Patient Care
-                    </p>
                     <p class="text-gray-600 dark:text-gray-300 mb-6">
                         Best practices in patient care and hygiene.
                     </p>
@@ -137,8 +128,30 @@
                     </a>
                 </div>
             </div>
+
+            <!-- Module core 1 -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                <img src="{{ asset('moduleSlides/4.jpg') }}" 
+                     alt="Module 3" 
+                    class="w-full h-64 object-cover"
+                 />
+                <div class="p-6">
+                    <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-4">
+                        Infection Control in Hospitality & Food Service
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        Best practices in patient care and hygiene.
+                    </p>
+                    <a href="{{ route('coreone.slideshow') }}" 
+                       class="text-yellow-500 hover:underline font-medium text-lg">
+                        View Module
+                        </a>
+                    </div>
+                </div>
         </section>    
     </div>
+
+    
 
     <footer>
         <p>&copy; 2024 Sanifect LMS. All rights reserved.</p>

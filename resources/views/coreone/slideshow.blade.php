@@ -5,76 +5,154 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sanifect Training Modules</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Added Tailwind for styling -->
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #1e293b;
-            color: #facc15;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .content-container {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            width: 85%;
-            max-width: 1200px;
-            background-color: #1e293b;
-            border: 3px solid #facc15;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-        .media-section {
-            width: 45%;
-            position: relative;
-        }
-        .media-section img, .media-section video {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            display: none; /* Initially hidden */
-        }
-        .text-section {
-            width: 55%;
-            display: flex;
-            flex-direction: column;
-        }
-        .scrollable-content {
-            max-height: 250px;
-            overflow-y: auto;
-            background-color: #1e293b;
-            border: 2px solid #facc15;
-            border-radius: 5px;
-            padding: 15px;
-        }
-        .button-container {
-            margin-top: 15px;
-        }
-        .quiz-button, .play-button {
-            background-color: #facc15;
-            color: #1e293b;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .quiz-button:hover, .play-button:hover {
-            background-color: #ffe082;
-        }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    color: #facc15;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Made content container bigger & centered */
+.content-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    width: 95%; /* Increased width */
+    max-width: 1600px; /* Larger max width */
+    background-color: #1e293b;
+    border: 4px solid #facc15;
+    border-radius: 15px;
+    padding: 40px; /* More padding */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Increased media section */
+.media-section {
+    width: 55%; /* Larger media area */
+    position: relative;
+}
+
+.media-section img, .media-section video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: none; /* Initially hidden */
+}
+
+/* Enlarged text section */
+.text-section {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    color: #facc15; /* Ensuring text is yellow */
+}
+
+/* Increased scrollable content height for readability */
+.scrollable-content {
+    max-height: 350px; /* Taller text area */
+    overflow-y: auto;
+    background-color: #1e293b;
+    border: 3px solid #facc15;
+    border-radius: 8px;
+    padding: 25px; /* More padding for better spacing */
+    font-size: 1.2em; /* Bigger text */
+    color: #facc15; /* Ensuring text is yellow */
+}
+
+/* Enlarged Buttons */
+.button-container {
+    margin-top: 25px;
+}
+
+.quiz-button, .play-button {
+    background-color: #facc15;
+    color: #1e293b;
+    border: none;
+    padding: 20px 40px; /* Bigger buttons */
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.quiz-button:hover, .play-button:hover {
+    background-color: #ffe082;
+    transform: scale(1.07);
+}
+
+/* Enlarged & Centered Title */
+#mainTitle {
+    font-size: 3.2rem; /* Larger title */
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(90deg, #facc15, #f97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    padding: 30px 0;
+    margin-top: 120px; /* Ensure it doesn’t overlap navbar */
+    font-family: 'Arial', sans-serif;
+}
+
     </style>
 </head>
 <body>
 
-<h1 id="mainTitle">Sanifect Training Modules</h1>
+<!-- Navbar -->
+<nav class="bg-yellow-500 shadow-lg w-full fixed top-0 z-50">
+    <div class="max-w-full px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        <!-- Logo -->
+        <div>
+            <a href="{{ route('home') }}">
+                <img src="{{ asset('logo.png') }}" alt="Logo" class="h-10">
+            </a>
+        </div>
+
+        <!-- User Auth Section -->
+        <div class="flex items-center space-x-4">
+            @auth
+                <div class="relative">
+                    <button id="dropdownButton" class="text-gray-900 font-medium flex items-center space-x-2">
+                        <span>Welcome, {{ auth()->user()->name }}</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5"
+                             viewBox="0 0 24 24">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </button>
+
+                    <div id="dropdownMenu"
+                         class="absolute right-0 mt-2 bg-white rounded-lg shadow-lg w-48 hidden z-10">
+                        <a href="{{ route('profile') }}" class="block px-4 py-2 text-gray-900 hover:bg-yellow-100">Profile</a>
+                        <form method="POST" action="{{ route('logout') }}" class="block">
+                            @csrf
+                            <button type="submit" class="w-full text-left px-4 py-2 text-gray-900 hover:bg-yellow-100">
+                                Logout
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            @else
+                <a href="{{ route('login') }}" class="text-gray-900 hover:text-white font-semibold">Login</a>
+                <a href="{{ route('register') }}" class="text-gray-900 hover:text-white font-semibold">Register</a>
+            @endauth
+        </div>
+    </div>
+</nav>
+
+<h1 id="mainTitle">Infection Control in Hospitality & Food Service</h1>
 
 <div class="content-container">
     <!-- Media Section (Image and Video) -->
@@ -343,6 +421,20 @@ document.getElementById("playPauseButton").addEventListener("click", function ()
         audioPlayer.pause();
         videoElement.pause();
         this.textContent = "Play";
+    }
+});
+
+// Navbar Dropdown
+const dropdownButton = document.getElementById('dropdownButton');
+const dropdownMenu = document.getElementById('dropdownMenu');
+
+dropdownButton?.addEventListener('click', () => {
+    dropdownMenu.classList.toggle('hidden');
+});
+
+document.addEventListener('click', (event) => {
+    if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.classList.add('hidden');
     }
 });
 

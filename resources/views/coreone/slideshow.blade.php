@@ -80,9 +80,10 @@ body {
     background-color: #facc15;
     color: #1e293b;
     border: none;
-    padding: 20px 40px; /* Bigger buttons */
+    padding: 10px 20px; /* Bigger buttons */
     font-size: 1.5em;
     font-weight: bold;
+    margin-left: 10px;
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;

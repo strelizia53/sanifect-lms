@@ -17,7 +17,7 @@
       .container {
         text-align: center;
         width: 90%;
-        max-width: 600px;
+        max-width: 800px;
         background-color: #1e293b;
         border-radius: 12px;
         padding: 30px;
@@ -32,7 +32,7 @@
       }
 
       .question {
-        font-size: 1.8em;
+        font-size: 1.5em;
         margin-bottom: 25px;
         color: #facc15;
       }
@@ -40,7 +40,7 @@
       .btn {
         display: block;
         width: 100%;
-        max-width: 400px;
+        max-width: 600px;
         margin: 10px auto;
         padding: 12px 20px;
         font-size: 1.1em;

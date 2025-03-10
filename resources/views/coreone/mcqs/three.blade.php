@@ -6,83 +6,84 @@
     <title>Question 3</title>
     @vite('resources/css/app.css') <!-- Load Tailwind via Vite -->
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #0f172a;
-        color: #f8fafc;
-      }
-
-      .container {
-        text-align: center;
-        width: 90%;
-        max-width: 600px;
-        background-color: #1e293b;
-        border-radius: 12px;
-        padding: 30px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        border: 2px solid #facc15;
-
-        /* Centering */
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-      .question {
-        font-size: 1.8em;
-        margin-bottom: 25px;
-        color: #facc15;
-      }
-
-      .btn {
-        display: block;
-        width: 100%;
-        max-width: 400px;
-        margin: 10px auto;
-        padding: 12px 20px;
-        font-size: 1.1em;
-        background-color: #334155;
-        color: #facc15;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-align: center;
-        text-transform: uppercase;
-      }
-
-      .btn:hover {
-        background-color: #475569;
-        transform: scale(1.05);
-      }
-
-      .btn:active {
-        transform: scale(0.98);
-      }
-
-      #feedback {
-        margin-top: 20px;
-        font-size: 1.2em;
-        font-weight: bold;
-        color: #f87171;
-      }
-
-      /* Back to Slideshow Button */
-      .back-btn {
-        margin-top: 20px;
-        background-color: #facc15;
-        color: #1e293b;
-        font-weight: bold;
-      }
-
-      .back-btn:hover {
-        background-color: #ffdb4d;
-        transform: scale(1.05);
-      }
-    </style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #0f172a;
+          color: #f8fafc;
+        }
+  
+        .container {
+          text-align: center;
+          width: 90%;
+          max-width: 800px;
+          background-color: #1e293b;
+          border-radius: 12px;
+          padding: 30px;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+          border: 2px solid #facc15;
+  
+          /* Centering */
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+  
+        .question {
+          font-size: 1.5em;
+          margin-bottom: 25px;
+          color: #facc15;
+        }
+  
+        .btn {
+          display: block;
+          width: 100%;
+          max-width: 600px;
+          margin: 10px auto;
+          padding: 12px 20px;
+          font-size: 1.1em;
+          background-color: #334155;
+          color: #facc15;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          text-align: center;
+          text-transform: uppercase;
+        }
+  
+        .btn:hover {
+          background-color: #475569;
+          transform: scale(1.05);
+        }
+  
+        .btn:active {
+          transform: scale(0.98);
+        }
+  
+        #feedback {
+          margin-top: 20px;
+          font-size: 1.2em;
+          font-weight: bold;
+          color: #f87171;
+        }
+  
+        /* Back to Slideshow Button */
+        .back-btn {
+          margin-top: 20px;
+          background-color: #facc15;
+          color: #1e293b;
+          font-weight: bold;
+        }
+  
+        .back-btn:hover {
+          background-color: #ffdb4d;
+          transform: scale(1.05);
+        }
+      </style>
+  
 </head>
 <body>
 
